@@ -10,6 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -18,15 +19,27 @@ public class FreeCrmTest {
 	static WebDriver driver;
 	static JavascriptExecutor js;
 
+	@Test(priority=1)
+	public void Testing2Test(){
+		
+		System.out.println("Successfully Passed");
+	}
+	
+	/**
+	
 	@BeforeMethod
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/IBMADMIN/git/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		js = (JavascriptExecutor) driver;
 		driver.get("https://www.freecrm.com/index.html");
 	}
 
-	@Test
+
+	
+	
+	  
+	  	@Test
 	public void freeCrmTitleTest() throws InterruptedException, IOException {
 		String title = driver.getTitle();
 		System.out.println("title is: " + title);
@@ -87,4 +100,11 @@ public class FreeCrmTest {
 
 	}
 
+
+	@AfterMethod
+	public void tearDown() throws Exception {
+		driver.quit();
+	}
+**/
+	
 }

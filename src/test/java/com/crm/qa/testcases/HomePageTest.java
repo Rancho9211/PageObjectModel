@@ -17,15 +17,27 @@ public class HomePageTest extends TestBase {
 	TestUtil testUtil;
 	ContactsPage contactsPage;
 
-	public HomePageTest() {
-		super();
-	}
+
 
 	//test cases should be separated -- independent with each other
 	//before each test case -- launch the browser and login
 	//@test -- execute test case
 	//after each test case -- close the browser
+
 	
+	@Test(priority=1)
+	public void TestingTest(){
+		
+		System.out.println("Successfully Passed");
+	}
+	
+	
+	
+	/**
+	 * 
+	public HomePageTest() {
+		super();
+	}
 	@BeforeMethod
 	public void setUp() {
 		initialization();
@@ -34,6 +46,8 @@ public class HomePageTest extends TestBase {
 		loginPage = new LoginPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
+	
+	
 	
 	
 	@Test(priority=1)
@@ -61,6 +75,6 @@ public class HomePageTest extends TestBase {
 		driver.quit();
 	}
 	
+	**/
 	
-
 }

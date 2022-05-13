@@ -10,19 +10,23 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase{
 	
 	//Page Factory - OR:
-	@FindBy(name="username")
+	
+	@FindBy(xpath="//*[contains(text(),'Login')]")
+	WebElement login;
+	
+	@FindBy(xpath="//input[@name='email']")
 	WebElement username;
 	
-	@FindBy(name="password")
+	@FindBy(xpath="//input[@name='password']")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@type='submit']")
+	@FindBy(xpath="//*[contains(text(),'Login') and @class='ui fluid large blue submit button']")
 	WebElement loginBtn;
 	
-	@FindBy(xpath="//button[contains(text(),'Sign Up')]")
+	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
 	WebElement signUpBtn;
 	
-	@FindBy(xpath="//img[contains(@class,'img-responsive')]")
+	@FindBy(xpath="//img[contains(@src,'logo.png')]")
 	WebElement crmLogo;
 	
 	//Initializing the Page Objects:
@@ -37,6 +41,10 @@ public class LoginPage extends TestBase{
 	
 	public boolean validateCRMImage(){
 		return crmLogo.isDisplayed();
+	}
+	
+	public void clickToLogin(){
+		 login.click();;
 	}
 	
 	public HomePage login(String un, String pwd){
